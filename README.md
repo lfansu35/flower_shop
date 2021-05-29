@@ -17,7 +17,7 @@ Prérequis :
 
 ### 2 Arborescence 
 tree -I node_modules
-`.
+```.
 ├── README.md
 ├── main.html
 ├── main.js
@@ -90,7 +90,8 @@ tree -I node_modules
     ├── history-list.ejs
     ├── identify.ejs
     ├── panier-list.ejs
-    └── server_red.ejs`
+    └── server_red.ejs
+```
 
 ### 3 Installation
 #### Mysql
