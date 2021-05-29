@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="page bouquet personnalise" content="client">
+    <title>Page dbouquet personnalise Fleuriste</title>
+    <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="bouquet.js"></script>
+    <link href="/bouquet_liste.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="includedMenu"></div>
+    <div>
+        <p class="msg">Vos Bouquets personnalise</p>
+        <table border="1" class="center">
+            <tr>
+                <th>Name of bouquet</th>
+                <th class="compo">Composition</th>
+				<th>Price</th>
+                <th>Add</th>
+            </tr>
+            <!-- if there's more than 1 elm, do forEach -->
+            <% if(bouquetPersoData.length!=0){bouquetPersoData.forEach(function(data){%>
+            <tr>
+                <td style="padding:20px"><%=data.nom_bouquet%></td>
+                <td align="left" style="padding:20px">
+                    <% if(data.composition.length!=0){data.composition.forEach(function(flower){%>
+                    <div>
+                        <img width="20%" src="<%=flower.imageFlower%>"/>
+                        <%=flower['quantity']%> *
+                        <%=flower['nameFlower']%>
+                        <% }) %>
+                    <% }%>
+                    </div>
+                </td>
+                <td style="padding:20px"><%=data.prix_bouquet %> €</td> 
+                <td style="padding:20px">
+                    <form method="post" action="/add_bouquet">
+                        <select name="idBouquet" id="AddBouquet">
+                            <script language="javascript" type="text/javascript">
+                                for(var j=1; j<=20; j++){
+                                    document.write("<option> " + j + " </option>");
+                                }
+                            </script>
+                        </select>
+                        <input type='hidden' name='nombreBouquet' value="<%=data.id_bouquet%>">
+                        <input type="submit" value="Ajouter"></text>
+                    </form>
+                </td>
+                
+            </tr>
+            <%  }) %>
+            <% }%>
+        </table>
+    </div>
+</body>
+
+</html>

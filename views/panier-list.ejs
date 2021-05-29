@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="page achat bouquet" content="client">
+    <title>Page d'achat bouquet Fleuriste</title>
+    <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <link href="/panier_liste.css" rel="stylesheet">
+        <script>
+            $(function () {
+                $("#includedMenu").load("/menu.html");
+            });
+        </script>
+</head>
+
+<body>
+    <div id="includedMenu"></div>
+    <div>
+        <p class="msg">PANIER</p>
+        <table border="1" class="center">
+                <tr>
+                    <th>Username</th>
+                    <th>User ID</th>
+                    <th>Commande No</th>
+                    <th>Bouquet</th>
+                    <th>Photo</th>
+                    <th>Composition</th>
+                    <th>Quantity</th>
+					<th>Price(unit)</th>
+					<th>Total</th>
+                    <th>Remove</th>
+                </tr>
+            <% if(panierData.length!=0){ 
+                panierData.forEach(function(data){ %>
+                <tr>
+                    <td style="padding:20px"><%=data.login_user%></td>
+                    <td style="padding:20px"><%=data.id_user%></td>
+                    <td style="padding:20px"><%=data.id_commande%></td>
+                    <td style="padding:20px"><%=data.nom_bouquet%></td>
+                    <td style="padding:20px"><img src="<%=data.photo_url %>" width="250px"></td>
+                    <td align="left" style="padding:20px"><%-data.composition%></td>
+                    <td style="padding:20px"><%=data.quantity%></td>
+					<td style="padding:20px"><%=data.prix_unitaire%> €</td>
+					<td style="padding:20px"><%=data.prix_total%> €</td>
+                    <td style="padding:20px">
+                        <form method="post" action="/commande_delete">
+                            <input type='hidden' name='idCommande' value="<%=data.id_commande%>">
+                            <input type="submit" value="Supprimer"></text>
+                        </form>
+                    </td>
+                </tr>
+                <% }) %>
+                <% }%>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    <td>Total :</td>
+                    <td>
+                            <form method="post" action="/valide_panier">
+                                <div><%=TotalPrice%> €</div>
+                            </form>
+                    </td>
+                    <td>
+                        <form method="post" action="/valide_panier">
+                            <input type="submit" value="Valider le panier"></text>
+                        </form>
+                    </td>
+                </tr>
+        </table>
+    </div>
+    <div>
+        <form method="post" action="/valide_panier">
+            <input type="hidden" value="Valider le panier"></text>
+        </form>
+    </div>
+</body>
+
+</html>
+
+

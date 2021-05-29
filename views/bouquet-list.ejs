@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="page achat bouquet" content="client">
+    <title>Achat De Bouquet</title>
+    <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src=/bouquet.js></script>
+    <link href="/bouquet_liste.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="includedMenu"></div>
+    <div>
+        <div class="msg">Nos Bouquets de Fleurs</div>
+        <div class="menuFilter">
+            <div class="fliter">Flitre de prix</div>
+
+            <form method="post" action="/filter_by_price">
+                <input name="min" type="text" placeholder="MIN" style="width: 50px; height: 20px">
+                <input name="max" type="text" placeholder="MAX" style="width: 50px; height: 20px">
+                <input name="Flitre" type="submit" value="Filter" style="width: 80px; height: 30px">
+            </form>
+        </div>
+        <div style='height:20px'></div>
+        <table class="center">
+            <tr>
+                <td>Nom bouquet</td>
+                <td>Photo</td>
+                <td>Composition</td>
+                <td>Prix</td>
+                <td>Ajouter</td>
+            </tr>
+            <% if(bouquetData.length!=0){ for(var i=0; i<bouquetData.length; i++){%>
+                <tr class="bouquetResultat">
+                    <td style="padding:5px">
+                        <%=bouquetData[i].nom_bouquet%>
+                    </td>
+                    <td>
+                        <figure class="zoom" style="background-image:url(<%=bouquetData[i].photo_url%>)" onmousemove="zoom(event)"><img src="<%=bouquetData[i].photo_url %>"></figure>
+                    </td>
+
+                    <td class="composition">
+                        <%-bouquetData[i].composition%>
+                    </td>
+                    <td>
+                        <%=bouquetData[i].prix_bouquet %> €</td>
+                    <td>
+                        <form method="post" action="/add_bouquet">
+                            <select name="idBouquet" id="AddBouquet">
+                                <script language="javascript" type="text/javascript">
+                                    for (var j = 1; j <= 20; j++) {
+                                        document.write("<option> " + j + " </option>");
+                                    }
+                                </script>
+                            </select>
+                            <input type='hidden' name='nombreBouquet' value="<%=bouquetData[i].id_bouquet%>">
+                            <input type="submit" value="Ajouter"></text>
+                        </form>
+                    </td>
+
+                </tr>
+                <% } %>
+                    <% }%>
+        </table>
+    </div>
+</body>
+
+</html>

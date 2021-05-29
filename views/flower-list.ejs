@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="page achat bouquet" content="client">
+    <title>Achat de Bouquet</title>
+    <link href="/flower_liste.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="flower.js"></script>
+</head>
+
+<body>
+    <div id="includedMenu"></div>
+    <div>
+        <form method="post" action="/add_flower">
+            <p class="msg">Nos Fleurs</p>
+
+            <div class="sendBouquetPersonnalise">
+                <input class="nameBouquetPerso" type="text" name="nameBouquet" placeholder="Nom de votre bouquet personnalise" maxlength="18">
+                <input class="addButton" type="submit" value="Add">
+            </div>
+
+            <div class="plat">
+                <% if(flowerData.length!=0){ for(var i=0; i<flowerData.length; i++){%>
+                    <div class="item flowercard">
+                        <figure class="zoom" style="background-image:url(<%=flowerData[i].photo_url%>)" onmousemove="zoom(event)"><img src="<%=flowerData[i].photo_url %>" alt="Photo de la fleur"></figure>
+                        <div>
+                            <p>
+                                <%=flowerData[i].nom_flower%>
+                            </p>
+                            <p>
+                                <%=flowerData[i].prix_flower%> € / unit%></p>
+                            <p>
+                                <select name="nbFleur" id="AddFleur">
+                                    <script>
+                                        for (var j = 0; j <= 20; j++) {
+                                            document.write("<option> " + j + " </option>");
+                                        }
+                                    </script>
+                                </select>
+                            </p>
+                            <input type="hidden" name="idFleur" value="<%=flowerData[i].id_flower%>" />
+                        </div>
+                    </div>
+                    <% } %>
+                        <% }%>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

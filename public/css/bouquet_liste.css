@@ -1,0 +1,127 @@
+body {
+    background-color: #FEDFE1;
+    /* margin: 0; */
+    /* overflow: hidden; */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding-left: 12%;
+}
+
+.msg {
+    text-align: center;
+    font-size: 30px;
+    color: #DB4D6D;
+    padding-bottom: 1%;
+    padding-top: 2%;
+}
+
+.center,
+.sendBouquetPersonnalise {
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.center table,
+td {
+    border: 1px solid black;
+}
+
+.menuFilter {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.composition {
+    text-align: left;
+}
+
+.bouquetResultat td {
+    padding: 8px;
+}
+
+.menu {
+    background-color: beige;
+    height: 100%;
+    width: 12%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 10px;
+}
+
+.menu .link {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.menu a:link,
+.menu a:visited {
+    color: #DB4D6D;
+    text-decoration: none;
+    letter-spacing: 0.10em;
+}
+
+.table_menu {
+    width: 100%;
+    height: 40%;
+}
+
+.menu .link_name {
+    font-size: 14px;
+    text-align: center;
+    width: 50%;
+    position: 50%;
+}
+
+.menu_title {
+    width: 100%;
+    height: 100px;
+    background-color: beige;
+    color: #DB4D6D;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: underline solid;
+    line-height: 100px;
+}
+
+figure.zoom {
+    background-position: 50% 50%;
+    /* position au miliieur */
+    position: relative;
+    /* on peut control l'image */
+    width: 200px;
+    /* size of image */
+    margin: 0px;
+    overflow: hidden;
+    cursor: zoom-in;
+    /* icon of mouse */
+}
+
+figure.zoom img:hover {
+    /*hover : passer mouse on it */
+    opacity: 0;
+}
+
+figure.zoom img {
+    transition: opacity 0.5s;
+    display: block;
+    width: 100%;
+}
+
+.fliter {
+    color: #DB4D6D;
+    margin-top: 3px;
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+.compo{
+    width:20%;
+}

@@ -1,0 +1,39 @@
+body {
+    /* overflow: hidden; */
+    background-color: #FEDFE1;
+    margin: 0;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h1 {
+    position: absolute;
+    width: 100%;
+    top: 3%;
+    color: #DB4D6D;
+    font-size: 30px;
+    text-align: center;
+}
+
+table, th, td{
+      border: 1px solid gray;
+}
+
+.center{
+    margin-top: 7%;
+    margin-left: auto;
+    margin-right: auto;   
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    color: #E16B8C;
+    padding-top:15%;
+    font-size: 20px;
+}
+
+.compo{
+    width:20%;
+}

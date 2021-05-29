@@ -1,0 +1,119 @@
+body {
+    background-color: #FEDFE1;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding-left: 12%;
+}
+
+.msg {
+    text-align: center;
+    font-size: 30px;
+    color: #DB4D6D;
+    padding-bottom: 1%;
+    padding-top: 1%;
+}
+
+.center,
+.sendBouquetPersonnalise {
+    padding-bottom: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    text-align: center;
+}
+
+.addButton {
+    width: 150px;
+    height: 30px;
+}
+
+.nameBouquetPerso {
+    width: 300px;
+    height: 20px;
+}
+
+.menu {
+    background-color: beige;
+    height: 100%;
+    width: 12%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 10px;
+}
+
+.menu .link {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.menu a:link,
+.menu a:visited {
+    color: #DB4D6D;
+    text-decoration: none;
+    letter-spacing: 0.10em;
+}
+
+.table_menu {
+    width: 100%;
+    height: 40%;
+}
+
+.menu .link_name {
+    font-size: 14px;
+    text-align: center;
+    width: 50%;
+    position: 50%;
+}
+
+.menu_title {
+    width: 100%;
+    height: 100px;
+    background-color: beige;
+    color: #DB4D6D;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: underline solid;
+    line-height: 100px;
+}
+
+figure.zoom {
+    background-position: 50% 50%; /* position center */
+    position: relative;
+    width: 200px;
+    height: 190px; /* size of image */
+    margin: 0px;
+    overflow: hidden;
+    cursor: zoom-in; /* icon of mouse when zoom*/
+}
+
+figure.zoom img:hover { /*hover : passer mouse on it */
+    opacity: 0;
+}
+
+figure.zoom img {
+    transition: opacity 0.5s;
+    display: block;
+    width: 100%;
+}
+
+.flowercard div {
+    text-align: center;
+}
+
+.plat {
+    padding: 2px 16px; 
+    display: flex; /* flexbile div */
+    justify-content: space-around; /* space between flowercard */
+    flex-flow: row wrap; /*position of flowercard*/
+}
+
+.plat .item {
+    background-color: #E87A90;
+    width: 200px;
+    height: 300px;
+    margin: 0 1% 24px; /*put space between the flowercard*/
+}

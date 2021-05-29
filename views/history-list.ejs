@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="page achat bouquet" content="client">
+    <title>Page d'achat bouquet Fleuriste</title>
+    <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+    <link href="/panier_liste.css" rel="stylesheet">
+        <script>
+            $(function () {
+                $("#includedMenu").load("/menu.html");
+            });
+        </script>
+</head>
+
+<body>
+    <div id="includedMenu"></div>
+    <div>
+        <p class="msg">COMMANDES PASSEES</p>
+        <table border="1" class="center">
+                <tr>
+                    <th>Date of creation</th>
+                    <th>Login user</th>
+                    <th>Id user</th>
+                    <th>Id commande</th>
+                    <th>Status</th>
+                    <th>Name of bouquet</th>
+                    <th>Quantity</th>
+					<th>Price (unit)</th>
+					<th>Total Price</th>
+                </tr>
+            <% if(historyData.length!=0){ for(var i=0; i<historyData.length; i++){%>
+                <tr>
+                    <td style="padding:20px"><%=historyData[i].create_date%></td>
+                    <td style="padding:20px"><%=historyData[i].login_user%></td>
+                    <td style="padding:20px"><%=historyData[i].id_user%></td>
+                    <td style="padding:20px"><%=historyData[i].id_commande%></td>
+                    <td style="padding:20px"><%=historyData[i].etat%></td>
+                    <td style="padding:20px"><%=historyData[i].nom_bouquet%></td>   
+                    <td style="padding:20px"><%=historyData[i].quantity%></td>
+					<td style="padding:20px"><%=historyData[i].prix_unitaire%> €</td>
+					<td style="padding:20px"><%=historyData[i].prix_total%> €</td>
+                </tr>
+        <% } %>
+            <% }%>
+        </table>
+    </div>
+</body>
+
+</html>
+
+

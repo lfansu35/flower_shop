@@ -1,0 +1,122 @@
+html{
+    height:100%;
+}
+
+body {
+    margin: 0;
+    width:100%;
+    padding-left: 13%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #FEDFE1;
+    overflow: hidden;
+}
+
+.content{
+    width: 100vw;
+    height: 100vh;
+}
+
+.msg{
+    color: #E16B8C;
+    position: absolute;
+    font-size: 25px;
+    padding-top: 3%;
+    padding-left: 30vw;
+
+}
+
+.content .table_img_bouquet {
+    position: absolute;
+    top: 10%;
+    left: 13%;
+    color: #DB4D6D;
+    width: 87%;
+    height: 50vh;
+}
+
+.menu {
+    background-color: beige;
+    height: 100%;
+    width: 13%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 10px;
+}
+
+.menu .link {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.menu a:link,
+.menu a:visited {
+    color: #DB4D6D;
+    text-decoration: none;
+    letter-spacing: 0.10em;
+}
+
+
+h1, p{
+  color:#DB4D6D;
+  font-size: large;
+  text-align: left;
+}
+
+
+.card {
+  width: 300px;
+  height: 300px;
+  /* perspective: 1000px; */
+}
+
+.rotate {
+  position: relative;
+  width:120%; /*size of image*/
+  height: 120%;
+  transition: transform 0.7s; /*rotate speed*/
+  transform-style: preserve-3d;
+}
+
+.card:hover .rotate {
+  transform: rotateY(360deg); /*rotae degree and direction*/
+}
+
+.table_menu {
+    width: 100%;
+    height: 40%;
+}
+
+.menu .link_name {
+    font-size: 14px;
+    text-align: center;
+    width: 50%;
+    position: 50%;
+}
+
+.menu_title {
+    width: 100%;
+    height: 100px;
+    background-color: beige;
+    color: #DB4D6D;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: underline solid;
+    line-height: 100px;
+}
+
+footer {
+    color: #E16B8C;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    font-size: 20px;
+    left: 50%;
+}
+
+img{
+    width:100%;
+}

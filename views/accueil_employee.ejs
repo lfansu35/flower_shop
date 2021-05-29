@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="page accueil employee" content="employee">
+    <title>Page of employee </title>
+    <link href="/accueil_employee.css" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <h1>Bonjour Employee <%= v_nom%> ! Voici les bouquet non-réalisées! </h1>
+    </div>
+    <div>
+        <table class="center" >
+            <tr>
+                <th>User</th>
+                <th>Commande No</th>
+                <th>Name</th>
+                <th class="compo">Composition</th>
+                <th>Quantity</th> 
+                <th>Price</th> 
+                <th>Date</th>
+                <th>Current Status</th>
+				<th>Realized</th>
+                <th>New Status</th>
+            </tr><% if(employeeData.length!=0){ 
+                employeeData.forEach(function(data){ %>
+                    <tr>
+                    <td style="padding:10px"><%=data.login_user%></td>
+                    <td style="padding:10px"><%=data.id_commande%></td>
+                    <td style="padding:10px"><%=data.nom_bouquet%></td>
+                    <td align="left" style="padding:20px">
+                        <% if(data.compo.length!=0){ data.compo.forEach(function(imgFlower){ %>
+                            <div>
+                                <img width="20%" src="<%=imgFlower.imageFlower%>" />
+                                <%=imgFlower['quantity']%> *
+                                    <%=imgFlower['nameFlower']%>
+                                        <% }) %>
+                                            <% }%>
+                            </div>
+                    </td>
+                    <td style="padding:10px"><%=data.quantity%></td>
+                    <td style="padding:10px"><%=data.price%> €</td>
+                    <td style="padding:10px"><%=data.create_date%></td>
+                    <td style="padding:10px"><%=data.etat_panier%></td>
+					<td style="padding:10px"><%=data.completed%></td>
+
+                    <td style="padding:20px">
+                        <form method="post" action="/update_bouquet">
+                            <select name="newIdStatus" id="panier_status">
+                                <option value="0">0 In Progress</option>
+                                <option value="1">1 Preparing</option>
+                                <option value="2">2 Order Completed</option>
+                              </select>
+                            <input type='hidden' name='idCommande' value="<%=data.id_commande%>">
+                            <input type="submit" ></text>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+                <% }%>
+        </table>
+    </div>
+    <div class="footer">
+        <footer> © copyright all right reserved</footer>
+    </div>
+</body>
+
+
+</html>

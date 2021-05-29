@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="page accueil client" content="client">
+    <title>Home Page</title>
+    <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+    <link href="/accueil_client.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="menu">
+        <div class="menu_title">Bienvenue
+            <%= v_nom%> !</div>
+        <table class="table_menu">
+            <tr class="link_name">
+                <th><a href="/bouquet">ACHAT DE <br/>BOUQUETS </a></th>
+            </tr>
+            <tr class="link_name">
+                <th><a href="/flower">CREEZ <br/>VOS BOUQUETS</a></th>
+            </tr>
+            <tr class="link_name">
+                <th><a href="/personnalise">VOS BOUQUETS<br/>PERSONNALISES</a></th>
+            </tr>
+            <tr class="link_name">
+                <th><a href="/panier">VOTRE PANIER</a></th>
+            </tr>
+            <tr class="link_name">
+                <th><a href="/history">HISTORIQUE <br/>DES COMMANDES</a></th>
+            </tr>
+            <tr class="link_name">
+                <th><a href="/logout">LOG OUT</a></th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="content">
+        <div class="msg">Voici Notre Selection de Bouquets Du Jour ! </div>
+
+        <table class="table_img_bouquet">
+            <tr>
+                <td>
+                    <div class="card">
+                        <div class="rotate">
+                            <div class="position_fixed">
+                                <img src="bodrum.JPG" alt=" image of bouquet" >
+                                <h1>BODRUM</h1>
+                                <p>Bodrum vous transporte illico en Turquie, au coeur d'un petit village romantique.</p>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <div class="rotate">
+                            <img src="lugano.JPG" alt=" image of bouquet" >
+                            <h1>LUGANO</h1>
+                            <p>Lugano vous transporte illico en Suisse, au coeur d'un petit village romantique.</p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <div class="rotate">
+                            <img src="positano.JPG" alt=" image of bouquet">
+                            <h1>POSITANO</h1>
+                            <p>Positano vous transporte illico en Italie, au coeur d'un petit village romantique. </p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <div class="rotate">
+                            <img src="yukon.JPG" alt=" image of bouquet">
+                            <h1>YUKON</h1>
+                            <p>Yukon vous transporte illico au Nord du Canada, il possede une ouverture sur l'ocean Arctique. </p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <footer> © Copyright All Right Reserved</footer>
+
+
+
+</body>
+
+
+
+</html>
